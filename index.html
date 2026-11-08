@@ -414,7 +414,7 @@
 
         .paper::before { left: -10px; transform: rotate(-8deg); }
         .paper::after { right: -10px; transform: rotate(7deg); }
-        .paper-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-family: 'Caveat', cursive; font-size: 1.3rem; color: #8a6a8f; }
+        .paper-head { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 14px; font-family: 'Caveat', cursive; font-size: 1.3rem; color: #8a6a8f; }
         .paper-head svg { width: 54px; height: 54px; overflow: visible; }
 
         .letter-body { font-family: 'Caveat', cursive; font-weight: 500; font-size: clamp(1.5rem, 5vw, 1.85rem); line-height: 1.5; color: var(--ink); }
@@ -681,7 +681,6 @@
             <article class="letter" id="letter" hidden>
                 <div class="paper" id="paper">
                     <div class="paper-head">
-                        <span id="ldate"></span>
                         <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#cow" /></svg>
                     </div>
                     <div class="letter-body" id="letterBody">
@@ -1787,8 +1786,6 @@
             blocks.forEach(b => io.observe(b));
         }
 
-        $('#ldate').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-
         let letterOpened = false;
         function openLetter() {
             if (letterOpened) return;
@@ -2023,3 +2020,4 @@
 </body>
 
 </html>
+
